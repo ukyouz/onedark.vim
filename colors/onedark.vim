@@ -226,7 +226,7 @@ if get(g:, 'onedark_hide_endofbuffer', 0)
     call s:h("EndOfBuffer", { "fg": s:black }) " filler lines (~) after the last line in the buffer
 endif
 call s:h("ErrorMsg", { "fg": s:red }) " error messages on the command line
-call s:h("VertSplit", { "fg": s:vertsplit }) " the column separating vertically split windows
+call s:h("VertSplit", { "fg": s:vertsplit, "bg": s:vertsplit}) " the column separating vertically split windows
 call s:h("Folded", { "fg": s:comment_grey }) " line used for closed folds
 call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
