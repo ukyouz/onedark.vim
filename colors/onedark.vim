@@ -138,6 +138,7 @@ let s:green = s:colors.green
 let s:yellow = s:colors.yellow
 let s:dark_yellow = s:colors.dark_yellow
 let s:blue = s:colors.blue
+let s:light_blue = s:colors.light_blue
 let s:purple = s:colors.purple
 let s:cyan = s:colors.cyan
 let s:white = s:colors.white
@@ -605,6 +606,28 @@ hi link gitcommitSelected gitcommitComment
 hi link gitcommitDiscardedArrow gitcommitDiscardedFile
 hi link gitcommitSelectedArrow gitcommitSelectedFile
 hi link gitcommitUnmergedArrow gitcommitUnmergedFile
+
+" }}}
+
+" Tree Sitter Group {{{
+
+call s:h("TSInclude", {"fg": s:purple})
+call s:h("TSType", {"fg": s:cyan})
+call s:h("TSKeyword", {"fg": s:purple})
+call s:h("TSKeywordFunction", {"fg": s:purple})
+call s:h("TSMethod", {"fg": s:light_blue})
+call s:h("TSFunction", {"fg": s:light_blue})
+call s:h("TSFuncBuiltin", {"fg": s:light_blue})
+call s:h("TSParameter", {"fg": s:white})
+call s:h("TSConstant", {"fg": s:dark_yellow})
+call s:h("TSConstructor", {"fg": s:cyan})
+call s:h("TSConstBuiltin", {"fg": s:dark_yellow})
+call s:h("TSVariable", {"fg": s:white})
+call s:h("TSVariableBuiltin", {"fg": s:yellow})
+call s:h("TSPunctSpecial", {"fg": s:dark_red})
+call s:h("TSNone", {"fg": s:white})
+call s:h("Error", {"fg": s:white, "bg": s:dark_red})
+call s:h("Special", {"fg": s:purple})
 
 " }}}
 
