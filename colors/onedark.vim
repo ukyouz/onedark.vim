@@ -150,6 +150,7 @@ let s:cursor_grey = s:colors.cursor_grey
 let s:visual_grey = s:colors.visual_grey
 let s:menu_grey = s:colors.menu_grey
 let s:special_grey = s:colors.special_grey
+let s:light_grey = s:colors.light_grey
 let s:vertsplit = s:colors.vertsplit
 
 " }}}
@@ -276,6 +277,16 @@ call s:h("debugBreakpoint", { "fg": s:black, "bg": s:red }) " a breakpoint
 " }}}
 
 " Language-Specific Highlighting {{{
+
+" C
+
+call s:h("cType", { "fg": s:cyan })
+call s:h("cTypedef", { "fg": s:purple })
+call s:h("cStructure", { "fg": s:purple })
+call s:h("cInclude", { "fg": s:purple })
+
+call s:h("cppType", { "fg": s:cyan })
+call s:h("cppSTLtype", { "fg": s:white })
 
 " CSS
 call s:h("cssAttrComma", { "fg": s:purple })
@@ -465,7 +476,7 @@ call s:h("perlVarPlain",{ "fg": s:blue })
 
 " PHP
 call s:h("phpVarSelector", { "fg": s:red })
-call s:h("phpOperator", { "fg": s:white })
+call s:h("phpOperator", { "fg": s:purple })
 call s:h("phpParent", { "fg": s:white })
 call s:h("phpMemberSelector", { "fg": s:white })
 call s:h("phpType", { "fg": s:purple })
@@ -476,12 +487,19 @@ call s:h("phpUseAlias", { "fg": s:white })
 call s:h("phpInclude", { "fg": s:purple })
 call s:h("phpClassExtends", { "fg": s:green })
 call s:h("phpDocTags", { "fg": s:white })
-call s:h("phpFunction", { "fg": s:blue })
-call s:h("phpFunctions", { "fg": s:cyan })
+call s:h("phpFunction", { "fg": s:light_blue })
+call s:h("phpFunctions", { "fg": s:light_blue })
 call s:h("phpMethodsVar", { "fg": s:dark_yellow })
 call s:h("phpMagicConstants", { "fg": s:dark_yellow })
 call s:h("phpSuperglobals", { "fg": s:red })
 call s:h("phpConstants", { "fg": s:dark_yellow })
+" call s:h("phpRegion", { "fg": s:light_blue })
+call s:h("Delimiter", { "fg": s:dark_red })
+
+" Python
+
+call s:h("pythonImport", {"fg": s:purple})
+call s:h("pythonNone", {"fg": s:dark_yellow})
 
 " Ruby
 call s:h("rubyBlockParameter", { "fg": s:red})
@@ -617,14 +635,19 @@ call s:h("TSKeyword", {"fg": s:purple})
 call s:h("TSKeywordFunction", {"fg": s:purple})
 call s:h("TSMethod", {"fg": s:light_blue})
 call s:h("TSFunction", {"fg": s:light_blue})
-call s:h("TSFuncBuiltin", {"fg": s:light_blue})
+call s:h("TSFuncBuiltin", {"fg": s:cyan})
 call s:h("TSParameter", {"fg": s:white})
 call s:h("TSConstant", {"fg": s:dark_yellow})
 call s:h("TSConstructor", {"fg": s:cyan})
 call s:h("TSConstBuiltin", {"fg": s:dark_yellow})
 call s:h("TSVariable", {"fg": s:white})
 call s:h("TSVariableBuiltin", {"fg": s:yellow})
+call s:h("TSPunctBracket", {"fg": s:light_grey})
 call s:h("TSPunctSpecial", {"fg": s:dark_red})
+call s:h("TSPunctDelimiter", {"fg": s:white})
+call s:h("TSTag", {"fg": s:red})
+call s:h("TSTagDelimiter", {"fg": s:white})
+call s:h("TSTagAttribute", {"fg": s:dark_yellow})
 call s:h("TSNone", {"fg": s:white})
 call s:h("Error", {"fg": s:white, "bg": s:dark_red})
 call s:h("Special", {"fg": s:purple})
