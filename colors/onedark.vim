@@ -131,6 +131,7 @@ endfunction
 " Color Variables {{{
 
 let s:overrides = get(g:, "onedark_color_overrides", {})
+let g:onedark_style = get(g:, "onedark_style", "")
 
 " visual_black: Black out selected text in 16-color visual mode
 let s:colors = {
@@ -146,12 +147,12 @@ let s:colors = {
       \ "black"         : get(s:overrides, "black", { "gui": "#1F2024", "cterm": "235", "cterm16": "0" }),
       \ "light_grey"    : get(s:overrides, "light_grey", { "gui": "#CFCFCF", "cterm": "251", "cterm16": "7" }),
       \ "visual_black"  : get(s:overrides, "visual_black", { "gui": "NONE", "cterm": "NONE", "cterm16": "0" }),
-      \ "cursor_grey"   : get(s:overrides, "cursor_grey", { "gui": "#2C323C", "cterm": "236", "cterm16": "8" }),
+      \ "cursor_grey"   : get(s:overrides, "cursor_grey", { "gui": "#22262D", "cterm": "235", "cterm16": "0" }),
       \ "visual_grey"   : get(s:overrides, "visual_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }),
       \ "menu_grey"     : get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" }),
       \ "gutter_fg_grey": get(s:overrides, "gutter_fg_grey", { "gui": "#4B5263", "cterm": "238", "cterm16": "15" }),
       \ "special_grey"  : get(s:overrides, "special_grey", { "gui": "#3B4048", "cterm": "238", "cterm16": "15" }),
-      \ "comment_grey"  : get(s:overrides, "comment_grey", { "gui": "#5C6370", "cterm": "244", "cterm16": "15" }),
+      \ "comment_grey"  : get(s:overrides, "comment_grey", { "gui": "#6C7381", "cterm": "242", "cterm16": "8" }),
       \ "white"         : get(s:overrides, "white", { "gui": "#ABB2BF", "cterm": "252", "cterm16": "7" }),
       \ "vertsplit"     : get(s:overrides, "vertsplit", { "gui": "#3C4046", "cterm": "59", "cterm16": "15" }),
       \}
@@ -172,7 +173,7 @@ let s:colors.visual_grey    = get(s:overrides, "visual_grey", { "gui": "#3E4452"
 let s:colors.menu_grey      = get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" })
 let s:colors.gutter_fg_grey = get(s:overrides, "gutter_fg_grey", { "gui": "#4B5263", "cterm": "238", "cterm16": "15" })
 let s:colors.special_grey   = get(s:overrides, "special_grey", { "gui": "#3B4048", "cterm": "238", "cterm16": "15" })
-let s:colors.comment_grey   = get(s:overrides, "comment_grey", { "gui": "#5C6370", "cterm": "244", "cterm16": "15" })
+let s:colors.comment_grey   = get(s:overrides, "comment_grey", { "gui": "#686F7C", "cterm": "243", "cterm16": "8" })
 let s:colors.light_grey     = get(s:overrides, "light_grey", { "gui": "#CDCDCD", "cterm": "250", "cterm16": "7" })
 
 endif
@@ -266,7 +267,7 @@ call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", { "fg": s:colors.yellow, "bg": s:colors.comment_grey }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
 call s:h("LineNr", { "fg": s:colors.gutter_fg_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 call s:h("CursorLineNr", {}) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-call s:h("MatchParen", { "fg": s:colors.black, "bg": s:colors.white, "gui": "underline" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
+call s:h("MatchParen", { "gui": "underline" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:colors.special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
