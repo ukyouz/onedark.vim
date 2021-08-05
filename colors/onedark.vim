@@ -134,28 +134,55 @@ let s:overrides = get(g:, "onedark_color_overrides", {})
 
 " visual_black: Black out selected text in 16-color visual mode
 let s:colors = {
-      \ "red": get(s:overrides, "red", { "gui": "#E06C75", "cterm": "203", "cterm16": "1" }),
-      \ "dark_red": get(s:overrides, "dark_red", { "gui": "#BE5046", "cterm": "1", "cterm16": "9" }),
-      \ "green": get(s:overrides, "green", { "gui": "#98C379", "cterm": "114", "cterm16": "2" }),
-      \ "dark_green": get(s:overrides, "dark_green", { "gui": "#203D49", "cterm": "23", "cterm16": "2" }),
-      \ "yellow": get(s:overrides, "yellow", { "gui": "#E5C07B", "cterm": "220", "cterm16": "3" }),
-      \ "dark_yellow": get(s:overrides, "dark_yellow", { "gui": "#D19A66", "cterm": "214", "cterm16": "11" }),
-      \ "blue": get(s:overrides, "blue", { "gui": "#61AFEF", "cterm": "33", "cterm16": "4" }),
-      \ "light_blue": get(s:overrides, "light_blue", { "gui": "#579AE0", "cterm": "75", "cterm16": "12" }),
-      \ "purple": get(s:overrides, "purple", { "gui": "#C678DD", "cterm": "176", "cterm16": "5" }),
-      \ "cyan": get(s:overrides, "cyan", { "gui": "#5FD7D7", "cterm": "80", "cterm16": "14" }),
-      \ "visual_black": get(s:overrides, "visual_black", { "gui": "NONE", "cterm": "NONE", "cterm16": "0" }),
-      \ "black": get(s:overrides, "black", { "gui": "#18191C", "cterm": "234", "cterm16": "0" }),
-      \ "cursor_grey": get(s:overrides, "cursor_grey", { "gui": "#2C323C", "cterm": "236", "cterm16": "8" }),
-      \ "visual_grey": get(s:overrides, "visual_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }),
-      \ "menu_grey": get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" }),
+      \ "red"           : get(s:overrides, "red", { "gui": "#E06770", "cterm": "204", "cterm16": "9" }),
+      \ "dark_red"      : get(s:overrides, "dark_red", { "gui": "#BD4C41", "cterm": "1", "cterm16": "1" }),
+      \ "green"         : get(s:overrides, "green", { "gui": "#95C374", "cterm": "115", "cterm16": "2" }),
+      \ "yellow"        : get(s:overrides, "yellow", { "gui": "#E4BE76", "cterm": "220", "cterm16": "11" }),
+      \ "dark_yellow"   : get(s:overrides, "dark_yellow", { "gui": "#D19964", "cterm": "214", "cterm16": "3" }),
+      \ "blue"          : get(s:overrides, "blue", { "gui": "#5CADF0", "cterm": "33", "cterm16": "4" }),
+      \ "light_blue"    : get(s:overrides, "light_blue", { "gui": "#5398E0", "cterm": "75", "cterm16": "12" }),
+      \ "purple"        : get(s:overrides, "purple", { "gui": "#C574DD", "cterm": "176", "cterm16": "5" }),
+      \ "cyan"          : get(s:overrides, "cyan", { "gui": "#5BD6D6", "cterm": "80", "cterm16": "6" }),
+      \ "black"         : get(s:overrides, "black", { "gui": "#1F2024", "cterm": "235", "cterm16": "0" }),
+      \ "light_grey"    : get(s:overrides, "light_grey", { "gui": "#CFCFCF", "cterm": "251", "cterm16": "7" }),
+      \ "visual_black"  : get(s:overrides, "visual_black", { "gui": "NONE", "cterm": "NONE", "cterm16": "0" }),
+      \ "cursor_grey"   : get(s:overrides, "cursor_grey", { "gui": "#2C323C", "cterm": "236", "cterm16": "8" }),
+      \ "visual_grey"   : get(s:overrides, "visual_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }),
+      \ "menu_grey"     : get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" }),
       \ "gutter_fg_grey": get(s:overrides, "gutter_fg_grey", { "gui": "#4B5263", "cterm": "238", "cterm16": "15" }),
-      \ "special_grey": get(s:overrides, "special_grey", { "gui": "#3B4048", "cterm": "238", "cterm16": "15" }),
-      \ "comment_grey": get(s:overrides, "comment_grey", { "gui": "#5C6370", "cterm": "244", "cterm16": "15" }),
-      \ "light_grey": get(s:overrides, "light_grey", { "gui": "#CDCDCD", "cterm": "250", "cterm16": "7" }),
-      \ "white": get(s:overrides, "white", { "gui": "#ABB2BF", "cterm": "252", "cterm16": "7" }),
-      \ "vertsplit": get(s:overrides, "vertsplit", { "gui": "#3C4046", "cterm": "59", "cterm16": "15" }),
+      \ "special_grey"  : get(s:overrides, "special_grey", { "gui": "#3B4048", "cterm": "238", "cterm16": "15" }),
+      \ "comment_grey"  : get(s:overrides, "comment_grey", { "gui": "#5C6370", "cterm": "244", "cterm16": "15" }),
+      \ "white"         : get(s:overrides, "white", { "gui": "#ABB2BF", "cterm": "252", "cterm16": "7" }),
+      \ "vertsplit"     : get(s:overrides, "vertsplit", { "gui": "#3C4046", "cterm": "59", "cterm16": "15" }),
       \}
+
+if g:onedark_style ==# 'darker' || g:onedark_style ==# 'deep'
+
+let s:colors.red            = get(s:overrides, "red", { "gui": "#E06C75", "cterm": "203", "cterm16": "9" })
+let s:colors.dark_red       = get(s:overrides, "dark_red", { "gui": "#BE5046", "cterm": "1", "cterm16": "1" })
+let s:colors.green          = get(s:overrides, "green", { "gui": "#98C379", "cterm": "114", "cterm16": "2" })
+let s:colors.yellow         = get(s:overrides, "yellow", { "gui": "#E5C07B", "cterm": "220", "cterm16": "11" })
+let s:colors.dark_yellow    = get(s:overrides, "dark_yellow", { "gui": "#D19A66", "cterm": "214", "cterm16": "3" })
+let s:colors.blue           = get(s:overrides, "blue", { "gui": "#61AFEF", "cterm": "33", "cterm16": "4" })
+let s:colors.light_blue     = get(s:overrides, "light_blue", { "gui": "#579AE0", "cterm": "75", "cterm16": "12" })
+let s:colors.purple         = get(s:overrides, "purple", { "gui": "#C678DD", "cterm": "176", "cterm16": "5" })
+let s:colors.cyan           = get(s:overrides, "cyan", { "gui": "#5FD7D7", "cterm": "80", "cterm16": "6" })
+let s:colors.black          = get(s:overrides, "black", { "gui": "#18191C", "cterm": "234", "cterm16": "0" })
+let s:colors.visual_grey    = get(s:overrides, "visual_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" })
+let s:colors.menu_grey      = get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" })
+let s:colors.gutter_fg_grey = get(s:overrides, "gutter_fg_grey", { "gui": "#4B5263", "cterm": "238", "cterm16": "15" })
+let s:colors.special_grey   = get(s:overrides, "special_grey", { "gui": "#3B4048", "cterm": "238", "cterm16": "15" })
+let s:colors.comment_grey   = get(s:overrides, "comment_grey", { "gui": "#5C6370", "cterm": "244", "cterm16": "15" })
+let s:colors.light_grey     = get(s:overrides, "light_grey", { "gui": "#CDCDCD", "cterm": "250", "cterm16": "7" })
+
+endif
+
+if g:onedark_style ==# 'deep'
+
+let s:colors.black = get(s:overrides, "black", { "gui": "#111113", "cterm": "233", "cterm16": "0" })
+
+endif
+
 
 " }}}
 
