@@ -284,12 +284,12 @@ call s:h("SpellBad", { "fg": s:colors.red, "gui": "underline", "cterm": "underli
 call s:h("SpellCap", { "fg": s:colors.dark_yellow }) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call s:h("SpellLocal", { "fg": s:colors.dark_yellow }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", { "fg": s:colors.dark_yellow }) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
-call s:h("StatusLine", { "fg": s:colors.white, "bg": s:colors.cursor_grey }) " status line of current window
-call s:h("StatusLineNC", { "fg": s:colors.comment_grey }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-call s:h("StatusLineTerm", { "fg": s:colors.white, "bg": s:colors.cursor_grey }) " status line of current :terminal window
-call s:h("StatusLineTermNC", { "fg": s:colors.comment_grey }) " status line of non-current :terminal window
-call s:h("TabLine", { "fg": s:colors.comment_grey }) " tab pages line, not active tab page label
-call s:h("TabLineFill", {}) " tab pages line, where there are no labels
+call s:h("StatusLine", { "fg": s:colors.white, "bg": s:colors.vertsplit }) " status line of current window
+call s:h("StatusLineNC", { "fg": s:colors.comment_grey, "bg": s:colors.visual_grey }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+call s:h("StatusLineTerm", { "fg": s:colors.white, "bg": s:colors.vertsplit }) " status line of current :terminal window
+call s:h("StatusLineTermNC", { "fg": s:colors.comment_grey, "bg": s:colors.visual_grey }) " status line of non-current :terminal window
+call s:h("TabLine", { "fg": s:colors.comment_grey, "bg": s:colors.visual_grey }) " tab pages line, not active tab page label
+call s:h("TabLineFill", { "bg": s:colors.visual_grey}) " tab pages line, where there are no labels
 call s:h("TabLineSel", { "fg": s:colors.white }) " tab pages line, active tab page label
 call s:h("Terminal", { "fg": s:colors.white, "bg": s:colors.black }) " terminal window (see terminal-size-color)
 call s:h("Title", { "fg": s:colors.green }) " titles for output from ":set all", ":autocmd" etc.
