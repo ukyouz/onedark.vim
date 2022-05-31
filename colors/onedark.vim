@@ -610,6 +610,10 @@ call s:h("xmlTagName", { "fg": s:colors.red })
 hi link GitGutterAdd    SignifySignAdd
 hi link GitGutterChange SignifySignChange
 hi link GitGutterDelete SignifySignDelete
+hi link GitGutterAddLineNr  GitGutterAdd
+hi link GitGutterChangeLineNr GitGutterChange
+hi link GitGutterDeleteLineNr GitGutterDelete
+hi link GitGutterChangeDeleteLineNr GitGutterChange
 
 " easymotion/vim-easymotion
 call s:h("EasyMotionTarget", { "fg": s:colors.red, "gui": "bold", "cterm": "bold" })
