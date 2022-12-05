@@ -688,6 +688,35 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 
 " Tree Sitter Group {{{
 
+if has('nvim')
+
+call s:h("@include", {"fg": s:colors.purple})
+call s:h("@type", {"fg": s:colors.cyan})
+call s:h("@keyword", {"fg": s:colors.purple})
+call s:h("@include", {"fg": s:colors.purple})
+call s:h("@keyword.function", {"fg": s:colors.purple})
+call s:h("@method", {"fg": s:colors.light_blue})
+call s:h("@function", {"fg": s:colors.light_blue})
+call s:h("@func.macro", {"fg": s:colors.light_blue})
+call s:h("@func.builtin", {"fg": s:colors.cyan})
+call s:h("@parameter", {"fg": s:colors.white})
+call s:h("@constant", {"fg": s:colors.yellow})
+call s:h("@constructor", {"fg": s:colors.cyan})
+call s:h("@const.builtin", {"fg": s:colors.yellow})
+call s:h("@variable", {"fg": s:colors.white})
+call s:h("@variable.builtin", {"fg": s:colors.yellow})
+call s:h("@punctuation.bracket", {"fg": s:colors.light_grey})
+call s:h("@punctuation.special", {"fg": s:colors.dark_red})
+call s:h("@punctuation.delimiter", {"fg": s:colors.white})
+call s:h("@property", {"fg": s:colors.white})
+call s:h("@tag", {"fg": s:colors.red})
+call s:h("@tag.delimiter", {"fg": s:colors.white})
+call s:h("@tag.attribute", {"fg": s:colors.dark_yellow})
+call s:h("@none", {"fg": s:colors.white})
+call s:h("@error", {"fg": s:colors.red})
+
+endif
+
 call s:h("TSInclude", {"fg": s:colors.purple})
 call s:h("TSType", {"fg": s:colors.cyan})
 call s:h("TSKeyword", {"fg": s:colors.purple})
