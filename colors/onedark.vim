@@ -151,7 +151,7 @@ let s:colors = {
       \ "visual_grey"   : get(s:overrides, "visual_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }),
       \ "menu_grey"     : get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" }),
       \ "gutter_fg_grey": get(s:overrides, "gutter_fg_grey", { "gui": "#4B5263", "cterm": "238", "cterm16": "15" }),
-      \ "special_grey"  : get(s:overrides, "special_grey", { "gui": "#3B4048", "cterm": "238", "cterm16": "15" }),
+      \ "special_grey"  : get(s:overrides, "special_grey", { "gui": "#36352B", "cterm": "238", "cterm16": "15" }),
       \ "comment_grey"  : get(s:overrides, "comment_grey", { "gui": "#6C7381", "cterm": "242", "cterm16": "8" }),
       \ "white"         : get(s:overrides, "white", { "gui": "#ABB2BF", "cterm": "252", "cterm16": "7" }),
       \ "vertsplit"     : get(s:overrides, "vertsplit", { "gui": "#3C4046", "cterm": "59", "cterm16": "15" }),
@@ -172,7 +172,7 @@ let s:colors.black          = get(s:overrides, "black", { "gui": "#18191C", "cte
 let s:colors.visual_grey    = get(s:overrides, "visual_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" })
 let s:colors.menu_grey      = get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" })
 let s:colors.gutter_fg_grey = get(s:overrides, "gutter_fg_grey", { "gui": "#4B5263", "cterm": "238", "cterm16": "15" })
-let s:colors.special_grey   = get(s:overrides, "special_grey", { "gui": "#3B4048", "cterm": "238", "cterm16": "15" })
+let s:colors.special_grey   = get(s:overrides, "special_grey", { "gui": "#36352B", "cterm": "238", "cterm16": "15" })
 let s:colors.comment_grey   = get(s:overrides, "comment_grey", { "gui": "#686F7C", "cterm": "243", "cterm16": "8" })
 let s:colors.light_grey     = get(s:overrides, "light_grey", { "gui": "#CDCDCD", "cterm": "250", "cterm16": "7" })
 
@@ -270,7 +270,7 @@ call s:h("CursorLineNr", {}) " Like LineNr when 'cursorline' or 'relativenumber'
 call s:h("MatchParen", { "gui": "underline" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
-call s:h("NonText", { "fg": s:colors.special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
+call s:h("NonText", { "fg": s:colors.comment_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
 call s:h("Normal", { "fg": s:colors.white, "bg": s:colors.black }) " normal text
 call s:h("Pmenu", { "bg": s:colors.menu_grey }) " Popup menu: normal item.
 call s:h("PmenuSel", { "fg": s:colors.black, "bg": s:colors.blue }) " Popup menu: selected item.
@@ -279,7 +279,7 @@ call s:h("PmenuThumb", { "bg": s:colors.white }) " Popup menu: Thumb of the scro
 call s:h("Question", { "fg": s:colors.purple }) " hit-enter prompt and yes/no questions
 call s:h("QuickFixLine", { "fg": s:colors.black, "bg": s:colors.yellow }) " Current quickfix item in the quickfix window.
 call s:h("Search", { "fg": s:colors.black, "bg": s:colors.yellow }) " Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
-call s:h("SpecialKey", { "fg": s:colors.special_grey }) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
+call s:h("SpecialKey", { "fg": s:colors.comment_grey }) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
 call s:h("SpellBad", { "fg": s:colors.red, "gui": "underline", "cterm": "underline" }) " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
 call s:h("SpellCap", { "fg": s:colors.dark_yellow }) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call s:h("SpellLocal", { "fg": s:colors.dark_yellow }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
@@ -316,6 +316,7 @@ call s:h("cType", { "fg": s:colors.cyan })
 call s:h("cTypedef", { "fg": s:colors.purple })
 call s:h("cStructure", { "fg": s:colors.purple })
 call s:h("cInclude", { "fg": s:colors.purple })
+call s:h("cPreCondit", { "fg": s:colors.purple })
 
 call s:h("cppType", { "fg": s:colors.cyan })
 call s:h("cppSTLtype", { "fg": s:colors.white })
@@ -443,9 +444,9 @@ call s:h("javascriptVariable", { "fg": s:colors.purple })
 call s:h("javascriptBrackets", { "fg": s:colors.white })
 call s:h("javascriptClassName", { "fg": s:colors.blue })
 call s:h("javascriptPropertyNameString", { "fg": s:colors.green })
-call s:h("javascriptLabel", {"fg": s:colors.red }) 
-call s:h("javascriptObjectMethodName", {"fg": s:colors.blue }) 
-call s:h("javascriptLineComment", {"fg": s:colors.comment_grey }) 
+call s:h("javascriptLabel", {"fg": s:colors.red })
+call s:h("javascriptObjectMethodName", {"fg": s:colors.blue })
+call s:h("javascriptLineComment", {"fg": s:colors.comment_grey })
 
 " JSON
 call s:h("jsonCommentError", { "fg": s:colors.white })
@@ -615,6 +616,8 @@ hi link GitGutterChangeLineNr GitGutterChange
 hi link GitGutterDeleteLineNr GitGutterDelete
 hi link GitGutterChangeDeleteLineNr GitGutterChange
 
+call s:h("SignatureMarkText", { "fg": s:colors.light_grey })
+
 " easymotion/vim-easymotion
 call s:h("EasyMotionTarget", { "fg": s:colors.red, "gui": "bold", "cterm": "bold" })
 call s:h("EasyMotionTarget2First", { "fg": s:colors.yellow, "gui": "bold", "cterm": "bold" })
@@ -742,6 +745,15 @@ call s:h("TSNone", {"fg": s:colors.white})
 call s:h("TSError", {"fg": s:colors.red})
 call s:h("Error", {"fg": s:colors.white, "bg": s:colors.dark_red})
 call s:h("Special", {"fg": s:colors.purple})
+
+" }}}
+
+" Vim Illuminate Group {{{
+
+call s:h("illuminatedWord", {"bg": s:colors.special_grey})
+call s:h("IlluminatedWordText", {"bg": s:colors.special_grey})
+call s:h("IlluminatedWordRead", {"bg": s:colors.special_grey})
+call s:h("IlluminatedWordWrite", {"bg": s:colors.special_grey})
 
 " }}}
 
