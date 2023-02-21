@@ -691,7 +691,7 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 
 " Tree Sitter Group {{{
 
-if has('nvim')
+if has('nvim') && matchstr(execute('version'), 'NVIM v\zs[^\n]*') >= '0.8.0'
 
 call s:h("@include", {"fg": s:colors.purple})
 call s:h("@type", {"fg": s:colors.cyan})
