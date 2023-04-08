@@ -5,10 +5,24 @@ A modified version of joshdick/onedark.vim to make vim way more like base16-eigh
 
 # Installation
 
-If you use Plug: 
+If you use Plug:
 
 ```
 Plug 'ukyouz/onedark.vim'
+```
+
+# Options
+
+If you want more contrast of background:
+
+```vim
+let g:onedark_style = 'darker'
+```
+
+Or even more:
+
+```vim
+let g:onedark_style = 'deep'
 ```
 
 # Updates
@@ -23,3 +37,10 @@ Support [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter#ava
 
 ![treesitter c](preview/treesitter-c.png)
 
+# Troubleshoot
+
+If color does not look good in MacOS Terminal.app, consider adding following settings:
+
+```vim
+set notermguicolors
+```
