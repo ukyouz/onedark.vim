@@ -174,7 +174,7 @@ let s:colors.menu_grey      = get(s:overrides, "menu_grey", { "gui": "#3E4452", 
 let s:colors.gutter_fg_grey = get(s:overrides, "gutter_fg_grey", { "gui": "#4B5263", "cterm": "238", "cterm16": "15" })
 let s:colors.special_grey   = get(s:overrides, "special_grey", { "gui": "#36352B", "cterm": "238", "cterm16": "15" })
 let s:colors.comment_grey   = get(s:overrides, "comment_grey", { "gui": "#686F7C", "cterm": "243", "cterm16": "8" })
-let s:colors.light_grey     = get(s:overrides, "light_grey", { "gui": "#CDCDCD", "cterm": "250", "cterm16": "7" })
+let s:colors.light_grey     = get(s:overrides, "light_grey", { "gui": "#abb2bf", "cterm": "250", "cterm16": "7" })
 
 endif
 
@@ -201,7 +201,7 @@ let g:terminal_ansi_colors = [
 " Syntax Groups (descriptions and ordering from `:h w18`) {{{
 
 call s:h("Comment", { "fg": s:colors.comment_grey, "gui": "italic", "cterm": "italic" }) " any comment
-call s:h("Constant", { "fg": s:colors.cyan }) " any constant
+call s:h("Constant", { "fg": s:colors.yellow }) " any constant
 call s:h("String", { "fg": s:colors.green }) " a string constant: "this is a string"
 call s:h("Character", { "fg": s:colors.green }) " a character constant: 'c', '\n'
 call s:h("Number", { "fg": s:colors.dark_yellow }) " a number constant: 234, 0xff
@@ -214,14 +214,14 @@ call s:h("Conditional", { "fg": s:colors.purple }) " if, then, else, endif, swit
 call s:h("Repeat", { "fg": s:colors.purple }) " for, do, while, etc.
 call s:h("Label", { "fg": s:colors.purple }) " case, default, etc.
 call s:h("Operator", { "fg": s:colors.purple }) " sizeof", "+", "*", etc.
-call s:h("Keyword", { "fg": s:colors.red }) " any other keyword
+call s:h("Keyword", { "fg": s:colors.purple }) " any other keyword
 call s:h("Exception", { "fg": s:colors.purple }) " try, catch, throw
 call s:h("PreProc", { "fg": s:colors.yellow }) " generic Preprocessor
 call s:h("Include", { "fg": s:colors.blue }) " preprocessor #include
 call s:h("Define", { "fg": s:colors.purple }) " preprocessor #define
 call s:h("Macro", { "fg": s:colors.purple }) " same as Define
 call s:h("PreCondit", { "fg": s:colors.yellow }) " preprocessor #if, #else, #endif, etc.
-call s:h("Type", { "fg": s:colors.yellow }) " int, long, char, etc.
+call s:h("Type", { "fg": s:colors.cyan }) " int, long, char, etc.
 call s:h("StorageClass", { "fg": s:colors.yellow }) " static, register, volatile, etc.
 call s:h("Structure", { "fg": s:colors.yellow }) " struct, union, enum, etc.
 call s:h("Typedef", { "fg": s:colors.yellow }) " A typedef
@@ -527,7 +527,7 @@ call s:h("phpMagicConstants", { "fg": s:colors.dark_yellow })
 call s:h("phpSuperglobals", { "fg": s:colors.red })
 call s:h("phpConstants", { "fg": s:colors.dark_yellow })
 " call s:h("phpRegion", { "fg": s:colors.light_blue })
-call s:h("Delimiter", { "fg": s:colors.dark_red })
+call s:h("Delimiter", { "fg": s:colors.white })
 
 " Python
 
@@ -691,22 +691,29 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 
 " Tree Sitter Group {{{
 
-if has('nvim') && matchstr(execute('version'), 'NVIM v\zs[^\n]*') >= '0.8.0'
+if has('nvim') && v:version >= 800
 
+call s:h("@attribute", {"fg": s:colors.yellow})
+call s:h("@attribute.builtin", {"fg": s:colors.yellow})
 call s:h("@include", {"fg": s:colors.purple})
 call s:h("@type", {"fg": s:colors.cyan})
+call s:h("@preproc", {"fg": s:colors.purple})
 call s:h("@keyword", {"fg": s:colors.purple})
 call s:h("@include", {"fg": s:colors.purple})
+call s:h("@storageclass", {"fg": s:colors.purple})
 call s:h("@keyword.function", {"fg": s:colors.purple})
 call s:h("@method", {"fg": s:colors.light_blue})
 call s:h("@function", {"fg": s:colors.light_blue})
 call s:h("@func.macro", {"fg": s:colors.light_blue})
 call s:h("@func.builtin", {"fg": s:colors.cyan})
+call s:h("@function.macro", {"fg": s:colors.light_blue})
+call s:h("@function.builtin", {"fg": s:colors.cyan})
 call s:h("@parameter", {"fg": s:colors.white})
 call s:h("@constant", {"fg": s:colors.yellow})
-call s:h("@constructor", {"fg": s:colors.cyan})
 call s:h("@const.builtin", {"fg": s:colors.yellow})
-call s:h("@variable", {"fg": s:colors.white})
+call s:h("@constant.builtin", {"fg": s:colors.yellow})
+call s:h("@constructor", {"fg": s:colors.cyan})
+call s:h("@variable", {"fg": s:colors.light_grey})
 call s:h("@variable.builtin", {"fg": s:colors.yellow})
 call s:h("@punctuation.bracket", {"fg": s:colors.light_grey})
 call s:h("@punctuation.special", {"fg": s:colors.dark_red})
@@ -732,7 +739,7 @@ call s:h("TSParameter", {"fg": s:colors.white})
 call s:h("TSConstant", {"fg": s:colors.yellow})
 call s:h("TSConstructor", {"fg": s:colors.cyan})
 call s:h("TSConstBuiltin", {"fg": s:colors.yellow})
-call s:h("TSVariable", {"fg": s:colors.white})
+call s:h("TSVariable", {"fg": s:colors.light_grey})
 call s:h("TSVariableBuiltin", {"fg": s:colors.yellow})
 call s:h("TSPunctBracket", {"fg": s:colors.light_grey})
 call s:h("TSPunctSpecial", {"fg": s:colors.dark_red})
