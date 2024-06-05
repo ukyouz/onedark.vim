@@ -25,6 +25,14 @@ Or even more:
 let g:onedark_style = 'deep'
 ```
 
+## Semantic Group
+
+To enable semantic highlight with LSP,
+
+```vim
+let g:enable_semantic_highlight = v:true
+```
+
 # Updates
 
 Support [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter#available-modules) for neovim version >= 0.5!

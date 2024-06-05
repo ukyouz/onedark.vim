@@ -132,6 +132,7 @@ endfunction
 
 let s:overrides = get(g:, "onedark_color_overrides", {})
 let g:onedark_style = get(g:, "onedark_style", "")
+let g:enable_semantic_highlight = get(g:, "enable_semantic_highlight", v:false)
 
 " visual_black: Black out selected text in 16-color visual mode
 let s:colors = {
@@ -755,6 +756,20 @@ call s:h("Special", {"fg": s:colors.purple})
 
 " }}}
 
+" LSP Group {{{
+
+if has('nvim') && v:version >= 800 && g:enable_semantic_highlight
+
+call s:h("@lsp.type.parameter", {"fg": s:colors.cyan})
+call s:h("@lsp.type.function", {"fg": s:colors.light_blue})
+call s:h("@lsp.type.property", {"fg": s:colors.red})
+call s:h("@lsp.type.type", {"fg": s:colors.yellow})
+call s:h("@lsp.type.macro", {"fg": s:colors.light_blue})
+
+endif
+  
+" }}}
+  
 " Vim Illuminate Group {{{
 
 call s:h("illuminatedWord", {"bg": s:colors.special_grey})
