@@ -220,7 +220,7 @@ call s:h("Exception", { "fg": s:colors.purple }) " try, catch, throw
 call s:h("PreProc", { "fg": s:colors.yellow }) " generic Preprocessor
 call s:h("Include", { "fg": s:colors.blue }) " preprocessor #include
 call s:h("Define", { "fg": s:colors.purple }) " preprocessor #define
-call s:h("Macro", { "fg": s:colors.purple }) " same as Define
+call s:h("Macro", { "fg": s:colors.light_blue }) " same as Define
 call s:h("PreCondit", { "fg": s:colors.yellow }) " preprocessor #if, #else, #endif, etc.
 call s:h("Type", { "fg": s:colors.cyan }) " int, long, char, etc.
 call s:h("StorageClass", { "fg": s:colors.yellow }) " static, register, volatile, etc.
