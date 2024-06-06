@@ -318,6 +318,7 @@ call s:h("cTypedef", { "fg": s:colors.purple })
 call s:h("cStructure", { "fg": s:colors.purple })
 call s:h("cInclude", { "fg": s:colors.purple })
 call s:h("cPreCondit", { "fg": s:colors.purple })
+call s:h("cDefine", { "fg": s:colors.purple }) " preprocessor #define
 
 call s:h("cppType", { "fg": s:colors.cyan })
 call s:h("cppSTLtype", { "fg": s:colors.white })
