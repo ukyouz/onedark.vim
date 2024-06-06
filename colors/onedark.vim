@@ -766,6 +766,9 @@ call s:h("@lsp.type.property", {"fg": s:colors.red})
 call s:h("@lsp.type.type", {"fg": s:colors.yellow})
 call s:h("@lsp.type.macro", {"fg": s:colors.light_blue})
 
+call s:h("DiagnosticUnderlineWarn", {"sp": s:colors.yellow, "gui": "underline", "cterm": "underline"})
+call s:h("DiagnosticUnderlineError", {"sp": s:colors.red, "gui": "underline", "cterm": "underline"})
+
 endif
   
 " }}}
