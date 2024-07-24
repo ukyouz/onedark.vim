@@ -208,7 +208,7 @@ call s:h("Character", { "fg": s:colors.green }) " a character constant: 'c', '\n
 call s:h("Number", { "fg": s:colors.dark_yellow }) " a number constant: 234, 0xff
 call s:h("Boolean", { "fg": s:colors.dark_yellow }) " a boolean constant: TRUE, false
 call s:h("Float", { "fg": s:colors.dark_yellow }) " a floating point constant: 2.3e10
-call s:h("Identifier", { "fg": s:colors.red }) " any variable name
+call s:h("Identifier", { "fg": s:colors.light_grey }) " any variable name
 call s:h("Function", { "fg": s:colors.blue }) " function name (also: methods for classes)
 call s:h("Statement", { "fg": s:colors.purple }) " any statement
 call s:h("Conditional", { "fg": s:colors.purple }) " if, then, else, endif, switch, etc.
@@ -253,9 +253,9 @@ else
 endif
 call s:h("Directory", { "fg": s:colors.blue }) " directory names (and other special names in listings)
 call s:h("DiffAdd", { "bg": s:colors.green, "fg": s:colors.black }) " diff mode: Added line
-call s:h("DiffChange", { "fg": s:colors.yellow, "gui": "underline", "cterm": "underline" }) " diff mode: Changed line
+call s:h("DiffChange", { "fg": s:colors.cyan, "gui": "underline", "cterm": "underline" }) " diff mode: Changed line
 call s:h("DiffDelete", { "bg": s:colors.red, "fg": s:colors.black }) " diff mode: Deleted line
-call s:h("DiffText", { "bg": s:colors.yellow, "fg": s:colors.black }) " diff mode: Changed text within a changed line
+call s:h("DiffText", { "bg": s:colors.cyan, "fg": s:colors.black }) " diff mode: Changed text within a changed line
 if get(g:, 'onedark_hide_endofbuffer', 0)
     " If enabled, will style end-of-buffer filler lines (~) to appear to be hidden.
     call s:h("EndOfBuffer", { "fg": s:colors.black }) " filler lines (~) after the last line in the buffer
@@ -609,6 +609,11 @@ call s:h("xmlTagName", { "fg": s:colors.red })
 
 " Plugin Highlighting {{{
 
+" petertriho/nvim-scrollbar
+call s:h("GitSignsAdd", { "fg": s:colors.green })
+call s:h("GitSignsChange", { "fg": s:colors.cyan })
+call s:h("GitSignsDelete", { "fg": s:colors.red })
+
 " airblade/vim-gitgutter
 hi link GitGutterAdd    SignifySignAdd
 hi link GitGutterChange SignifySignChange
@@ -628,7 +633,7 @@ call s:h("EasyMotionShade",  { "fg": s:colors.comment_grey })
 
 " mhinz/vim-signify
 call s:h("SignifySignAdd", { "fg": s:colors.green })
-call s:h("SignifySignChange", { "fg": s:colors.yellow })
+call s:h("SignifySignChange", { "fg": s:colors.cyan })
 call s:h("SignifySignDelete", { "fg": s:colors.red })
 
 " neomake/neomake
@@ -717,6 +722,7 @@ call s:h("@constant.builtin", {"fg": s:colors.yellow})
 call s:h("@constructor", {"fg": s:colors.cyan})
 call s:h("@variable", {"fg": s:colors.light_grey})
 call s:h("@variable.builtin", {"fg": s:colors.yellow})
+call s:h("@variable.member.python", {"fg": s:colors.red})
 call s:h("@punctuation.bracket", {"fg": s:colors.light_grey})
 call s:h("@punctuation.special", {"fg": s:colors.dark_red})
 call s:h("@punctuation.delimiter", {"fg": s:colors.white})
