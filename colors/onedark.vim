@@ -141,8 +141,8 @@ let s:colors = {
       \ "green"         : get(s:overrides, "green", { "gui": "#95C374", "cterm": "115", "cterm16": "2" }),
       \ "yellow"        : get(s:overrides, "yellow", { "gui": "#E4BE76", "cterm": "220", "cterm16": "11" }),
       \ "dark_yellow"   : get(s:overrides, "dark_yellow", { "gui": "#D19964", "cterm": "214", "cterm16": "3" }),
-      \ "blue"          : get(s:overrides, "blue", { "gui": "#5CADF0", "cterm": "33", "cterm16": "4" }),
-      \ "light_blue"    : get(s:overrides, "light_blue", { "gui": "#5398E0", "cterm": "75", "cterm16": "12" }),
+      \ "blue"          : get(s:overrides, "blue", { "gui": "#5398E0", "cterm": "33", "cterm16": "4" }),
+      \ "light_blue"    : get(s:overrides, "light_blue", { "gui": "#5cb7f0", "cterm": "75", "cterm16": "12" }),
       \ "purple"        : get(s:overrides, "purple", { "gui": "#C574DD", "cterm": "176", "cterm16": "5" }),
       \ "cyan"          : get(s:overrides, "cyan", { "gui": "#5BD6D6", "cterm": "80", "cterm16": "6" }),
       \ "black"         : get(s:overrides, "black", { "gui": "#1F2024", "cterm": "235", "cterm16": "0" }),
@@ -165,10 +165,10 @@ let s:colors.dark_red       = get(s:overrides, "dark_red", { "gui": "#BE5046", "
 let s:colors.green          = get(s:overrides, "green", { "gui": "#98C379", "cterm": "114", "cterm16": "2" })
 let s:colors.yellow         = get(s:overrides, "yellow", { "gui": "#E5C07B", "cterm": "220", "cterm16": "11" })
 let s:colors.dark_yellow    = get(s:overrides, "dark_yellow", { "gui": "#D19A66", "cterm": "214", "cterm16": "3" })
-let s:colors.blue           = get(s:overrides, "blue", { "gui": "#61AFEF", "cterm": "33", "cterm16": "4" })
-let s:colors.light_blue     = get(s:overrides, "light_blue", { "gui": "#579AE0", "cterm": "75", "cterm16": "12" })
+let s:colors.blue           = get(s:overrides, "blue", { "gui": "#569EE8", "cterm": "33", "cterm16": "4" })
+let s:colors.light_blue     = get(s:overrides, "light_blue", { "gui": "#5EB6DF", "cterm": "75", "cterm16": "12" })
 let s:colors.purple         = get(s:overrides, "purple", { "gui": "#C678DD", "cterm": "176", "cterm16": "5" })
-let s:colors.cyan           = get(s:overrides, "cyan", { "gui": "#5FD7D7", "cterm": "80", "cterm16": "6" })
+let s:colors.cyan           = get(s:overrides, "cyan", { "gui": "#62D5D5", "cterm": "80", "cterm16": "6" })
 let s:colors.black          = get(s:overrides, "black", { "gui": "#18191C", "cterm": "234", "cterm16": "0" })
 let s:colors.visual_grey    = get(s:overrides, "visual_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" })
 let s:colors.menu_grey      = get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" })
@@ -222,7 +222,7 @@ call s:h("Include", { "fg": s:colors.blue }) " preprocessor #include
 call s:h("Define", { "fg": s:colors.purple }) " preprocessor #define
 call s:h("Macro", { "fg": s:colors.light_blue }) " same as Define
 call s:h("PreCondit", { "fg": s:colors.yellow }) " preprocessor #if, #else, #endif, etc.
-call s:h("Type", { "fg": s:colors.cyan }) " int, long, char, etc.
+call s:h("Type", { "fg": s:colors.yellow }) " int, long, char, etc.
 call s:h("StorageClass", { "fg": s:colors.yellow }) " static, register, volatile, etc.
 call s:h("Structure", { "fg": s:colors.yellow }) " struct, union, enum, etc.
 call s:h("Typedef", { "fg": s:colors.yellow }) " A typedef
@@ -313,14 +313,14 @@ call s:h("debugBreakpoint", { "fg": s:colors.black, "bg": s:colors.red }) " a br
 
 " C
 
-call s:h("cType", { "fg": s:colors.cyan })
+call s:h("cType", { "fg": s:colors.yellow })
 call s:h("cTypedef", { "fg": s:colors.purple })
 call s:h("cStructure", { "fg": s:colors.purple })
 call s:h("cInclude", { "fg": s:colors.purple })
 call s:h("cPreCondit", { "fg": s:colors.purple })
 call s:h("cDefine", { "fg": s:colors.purple }) " preprocessor #define
 
-call s:h("cppType", { "fg": s:colors.cyan })
+call s:h("cppType", { "fg": s:colors.yellow })
 call s:h("cppSTLtype", { "fg": s:colors.white })
 
 " CSS
@@ -522,8 +522,8 @@ call s:h("phpUseAlias", { "fg": s:colors.white })
 call s:h("phpInclude", { "fg": s:colors.purple })
 call s:h("phpClassExtends", { "fg": s:colors.green })
 call s:h("phpDocTags", { "fg": s:colors.white })
-call s:h("phpFunction", { "fg": s:colors.light_blue })
-call s:h("phpFunctions", { "fg": s:colors.light_blue })
+call s:h("phpFunction", { "fg": s:colors.blue })
+call s:h("phpFunctions", { "fg": s:colors.blue })
 call s:h("phpMethodsVar", { "fg": s:colors.dark_yellow })
 call s:h("phpMagicConstants", { "fg": s:colors.dark_yellow })
 call s:h("phpSuperglobals", { "fg": s:colors.red })
@@ -703,14 +703,17 @@ if has('nvim') && v:version >= 800
 call s:h("@attribute", {"fg": s:colors.yellow})
 call s:h("@attribute.builtin", {"fg": s:colors.yellow})
 call s:h("@include", {"fg": s:colors.purple})
-call s:h("@type", {"fg": s:colors.cyan})
+call s:h("@type", {"fg": s:colors.yellow})
+call s:h("@type.python", {"fg": s:colors.cyan})
+call s:h("@type.definition.python", {"fg": s:colors.cyan})
+call s:h("@type.builtin.python", {"fg": s:colors.cyan})
 call s:h("@preproc", {"fg": s:colors.purple})
 call s:h("@keyword", {"fg": s:colors.purple})
 call s:h("@include", {"fg": s:colors.purple})
 call s:h("@storageclass", {"fg": s:colors.purple})
 call s:h("@keyword.function", {"fg": s:colors.purple})
 call s:h("@method", {"fg": s:colors.light_blue})
-call s:h("@function", {"fg": s:colors.light_blue})
+call s:h("@function", {"fg": s:colors.blue})
 call s:h("@func.macro", {"fg": s:colors.light_blue})
 call s:h("@func.builtin", {"fg": s:colors.cyan})
 call s:h("@function.macro", {"fg": s:colors.light_blue})
@@ -736,11 +739,11 @@ call s:h("@error", {"fg": s:colors.red})
 endif
 
 call s:h("TSInclude", {"fg": s:colors.purple})
-call s:h("TSType", {"fg": s:colors.cyan})
+call s:h("TSType", {"fg": s:colors.yellow})
 call s:h("TSKeyword", {"fg": s:colors.purple})
 call s:h("TSKeywordFunction", {"fg": s:colors.purple})
 call s:h("TSMethod", {"fg": s:colors.light_blue})
-call s:h("TSFunction", {"fg": s:colors.light_blue})
+call s:h("TSFunction", {"fg": s:colors.blue})
 call s:h("TSFuncMacro", {"fg": s:colors.light_blue})
 call s:h("TSFuncBuiltin", {"fg": s:colors.cyan})
 call s:h("TSParameter", {"fg": s:colors.white})
@@ -768,7 +771,7 @@ call s:h("Special", {"fg": s:colors.purple})
 if has('nvim') && v:version >= 800 && g:enable_semantic_highlight
 
 call s:h("@lsp.type.parameter", {"fg": s:colors.cyan})
-call s:h("@lsp.type.function", {"fg": s:colors.light_blue})
+call s:h("@lsp.type.function", {"fg": s:colors.blue})
 call s:h("@lsp.type.property", {"fg": s:colors.red})
 call s:h("@lsp.type.type", {"fg": s:colors.yellow})
 call s:h("@lsp.type.macro", {"fg": s:colors.light_blue})
