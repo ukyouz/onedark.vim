@@ -780,9 +780,9 @@ call s:h("DiagnosticUnderlineWarn", {"sp": s:colors.yellow, "gui": "underline", 
 call s:h("DiagnosticUnderlineError", {"sp": s:colors.red, "gui": "underline", "cterm": "underline"})
 
 endif
-  
+
 " }}}
-  
+
 " Vim Illuminate Group {{{
 
 call s:h("illuminatedWord", {"bg": s:colors.special_grey})
@@ -814,6 +814,15 @@ if has("nvim")
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_7
 endif
+
+
+" Neovim terminal colors {{{
+
+call s:h("DiagnosticError", {"fg": s:colors.red})
+call s:h("DiagnosticWarn", {"fg": s:colors.yellow})
+call s:h("DiagnosticInfo", {"fg": s:colors.light_blue})
+call s:h("DiagnosticOk", {"fg": s:colors.green})
+
 
 " }}}
 
