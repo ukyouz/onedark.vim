@@ -155,7 +155,7 @@ let s:colors = {
       \ "special_grey"  : get(s:overrides, "special_grey", { "gui": "#36352B", "cterm": "238", "cterm16": "15" }),
       \ "comment_grey"  : get(s:overrides, "comment_grey", { "gui": "#6C7381", "cterm": "242", "cterm16": "8" }),
       \ "white"         : get(s:overrides, "white", { "gui": "#ABB2BF", "cterm": "252", "cterm16": "7" }),
-      \ "vertsplit"     : get(s:overrides, "vertsplit", { "gui": "#3C4046", "cterm": "59", "cterm16": "15" }),
+      \ "vertsplit"     : get(s:overrides, "vertsplit", { "gui": "#2C323C", "cterm": "59", "cterm16": "15" }),
       \}
 
 if g:onedark_style ==# 'darker' || g:onedark_style ==# 'deep'
@@ -286,7 +286,7 @@ call s:h("SpellCap", { "fg": s:colors.dark_yellow }) " Word that should start wi
 call s:h("SpellLocal", { "fg": s:colors.dark_yellow }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", { "fg": s:colors.dark_yellow }) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
 call s:h("StatusLine", { "fg": s:colors.white, "bg": s:colors.vertsplit }) " status line of current window
-call s:h("StatusLineNC", { "fg": s:colors.comment_grey, "bg": s:colors.visual_grey }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+call s:h("StatusLineNC", { "fg": s:colors.comment_grey, "bg": s:colors.vertsplit }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 call s:h("StatusLineTerm", { "fg": s:colors.white, "bg": s:colors.vertsplit }) " status line of current :terminal window
 call s:h("StatusLineTermNC", { "fg": s:colors.comment_grey, "bg": s:colors.visual_grey }) " status line of non-current :terminal window
 call s:h("TabLine", { "fg": s:colors.comment_grey, "bg": s:colors.visual_grey }) " tab pages line, not active tab page label
