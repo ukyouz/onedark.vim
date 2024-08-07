@@ -768,7 +768,7 @@ call s:h("Special", {"fg": s:colors.purple})
 
 " LSP Group {{{
 
-if has('nvim') && v:version >= 800 && g:enable_semantic_highlight
+if has('nvim') && v:version >= 800
 
 call s:h("@lsp.type.parameter", {"fg": s:colors.cyan})
 call s:h("@lsp.type.function", {"fg": s:colors.blue})
