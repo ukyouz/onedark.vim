@@ -266,9 +266,10 @@ call s:h("Folded", { "fg": s:colors.comment_grey }) " line used for closed folds
 call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", { "fg": s:colors.yellow, "bg": s:colors.comment_grey }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
-call s:h("LineNr", { "fg": s:colors.gutter_fg_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-call s:h("CursorLineNr", {}) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-call s:h("MatchParen", { "gui": "underline" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
+call s:h("LineNr", { "fg": s:colors.comment_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+call s:h("CursorLineNr", { "bg": s:colors.cursor_grey }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+call s:h("CursorLineSign", { "bg": s:colors.cursor_grey }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+call s:h("MatchParen", { "gui": "underline", "guisp": "NONE" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:colors.comment_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
