@@ -232,7 +232,7 @@ call s:h("Tag", {}) " you can use CTRL-] on this
 call s:h("Delimiter", {}) " character that needs attention
 call s:h("SpecialComment", { "fg": s:colors.comment_grey }) " special things inside a comment
 call s:h("Debug", {}) " debugging statements
-call s:h("Underlined", { "gui": "underline", "cterm": "underline" }) " text that stands out, HTML links
+call s:h("Underlined", { "gui": "underline", "cterm": "underline", "sp": s:colors.comment_grey }) " text that stands out, HTML links
 call s:h("Ignore", {}) " left blank, hidden
 call s:h("Error", { "fg": s:colors.red }) " any erroneous construct
 call s:h("Todo", { "fg": s:colors.purple }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
@@ -270,7 +270,7 @@ call s:h("IncSearch", { "fg": s:colors.yellow, "bg": s:colors.comment_grey }) " 
 call s:h("LineNr", { "fg": s:colors.comment_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 call s:h("CursorLineNr", { "bg": s:colors.cursor_grey }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 call s:h("CursorLineSign", { "bg": s:colors.cursor_grey }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-call s:h("MatchParen", { "gui": "underline", "guisp": "NONE" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
+call s:h("MatchParen", { "gui": "underline", "sp": s:colors.comment_grey }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:colors.comment_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
