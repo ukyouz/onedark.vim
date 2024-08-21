@@ -273,7 +273,7 @@ call s:h("MatchParen", { "gui": "underline", "guisp": "NONE" }) " The character 
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:colors.comment_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
-call s:h("Normal", { "fg": s:colors.white, "bg": s:colors.black }) " normal text
+call s:h("Normal", { "fg": s:colors.white }) " normal text
 call s:h("Pmenu", { "bg": s:colors.menu_grey }) " Popup menu: normal item.
 call s:h("PmenuSel", { "fg": s:colors.black, "bg": s:colors.blue }) " Popup menu: selected item.
 call s:h("PmenuSbar", { "bg": s:colors.special_grey }) " Popup menu: scrollbar.
