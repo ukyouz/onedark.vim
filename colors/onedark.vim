@@ -372,6 +372,7 @@ call s:h("htmlLink", { "fg": s:colors.white })
 call s:h("htmlSpecialChar", { "fg": s:colors.dark_yellow })
 call s:h("htmlSpecialTagName", { "fg": s:colors.red })
 call s:h("htmlTag", { "fg": s:colors.white })
+call s:h("htmlTagN", { "fg": s:colors.red })
 call s:h("htmlTagName", { "fg": s:colors.red })
 
 " JavaScript
@@ -513,6 +514,9 @@ call s:h("perlVarPlain",{ "fg": s:colors.blue })
 
 " PHP
 call s:h("phpVarSelector", { "fg": s:colors.red })
+call s:h("phpIdentifier", { "fg": s:colors.red })
+call s:h("phpIntVar", { "fg": s:colors.red })
+call s:h("phpMethodsVar", { "fg": s:colors.red })
 call s:h("phpOperator", { "fg": s:colors.purple })
 call s:h("phpParent", { "fg": s:colors.white })
 call s:h("phpMemberSelector", { "fg": s:colors.white })
@@ -526,12 +530,15 @@ call s:h("phpClassExtends", { "fg": s:colors.green })
 call s:h("phpDocTags", { "fg": s:colors.white })
 call s:h("phpFunction", { "fg": s:colors.blue })
 call s:h("phpFunctions", { "fg": s:colors.blue })
-call s:h("phpMethodsVar", { "fg": s:colors.dark_yellow })
+call s:h("phpSpecialFunction", { "fg": s:colors.light_blue })
 call s:h("phpMagicConstants", { "fg": s:colors.dark_yellow })
 call s:h("phpSuperglobals", { "fg": s:colors.red })
 call s:h("phpConstants", { "fg": s:colors.dark_yellow })
-" call s:h("phpRegion", { "fg": s:colors.light_blue })
-call s:h("Delimiter", { "fg": s:colors.white })
+call s:h("phpRegion", { "fg": s:colors.blue })
+call s:h("phpSpecial", { "fg": s:colors.purple })
+call s:h("phpFCKeyword", { "fg": s:colors.purple })
+call s:h("Delimiter", { "fg": s:colors.purple })
+call s:h("doxygenBrief", { "fg": s:colors.white })
 
 " Python
 
