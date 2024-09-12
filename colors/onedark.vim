@@ -136,46 +136,38 @@ let g:enable_semantic_highlight = get(g:, "enable_semantic_highlight", v:false)
 
 " visual_black: Black out selected text in 16-color visual mode
 let s:colors = {
-      \ "red"           : get(s:overrides, "red", { "gui": "#E06770", "cterm": "204", "cterm16": "9" }),
       \ "dark_red"      : get(s:overrides, "dark_red", { "gui": "#BD4C41", "cterm": "1", "cterm16": "1" }),
-      \ "green"         : get(s:overrides, "green", { "gui": "#95C374", "cterm": "115", "cterm16": "2" }),
-      \ "yellow"        : get(s:overrides, "yellow", { "gui": "#E4BE76", "cterm": "220", "cterm16": "11" }),
+      \ "red"           : get(s:overrides, "red", { "gui": "#E06770", "cterm": "204", "cterm16": "9" }),
       \ "dark_yellow"   : get(s:overrides, "dark_yellow", { "gui": "#D19964", "cterm": "214", "cterm16": "3" }),
-      \ "blue"          : get(s:overrides, "blue", { "gui": "#5398E0", "cterm": "33", "cterm16": "4" }),
-      \ "light_blue"    : get(s:overrides, "light_blue", { "gui": "#5cb7f0", "cterm": "75", "cterm16": "12" }),
-      \ "purple"        : get(s:overrides, "purple", { "gui": "#C574DD", "cterm": "176", "cterm16": "5" }),
+      \ "yellow"        : get(s:overrides, "yellow", { "gui": "#E4BE76", "cterm": "220", "cterm16": "11" }),
+      \ "green"         : get(s:overrides, "green", { "gui": "#95C374", "cterm": "115", "cterm16": "2" }),
       \ "cyan"          : get(s:overrides, "cyan", { "gui": "#5BD6D6", "cterm": "80", "cterm16": "6" }),
+      \ "light_blue"    : get(s:overrides, "light_blue", { "gui": "#5CBAF0", "cterm": "75", "cterm16": "12" }),
+      \ "blue"          : get(s:overrides, "blue", { "gui": "#5398E0", "cterm": "33", "cterm16": "4" }),
+      \ "purple"        : get(s:overrides, "purple", { "gui": "#C574DD", "cterm": "176", "cterm16": "5" }),
+      \ "yellowish_grey": get(s:overrides, "yellowish_grey", { "gui": "#36352B", "cterm": "238", "cterm16": "15" }),
       \ "black"         : get(s:overrides, "black", { "gui": "#1F2024", "cterm": "235", "cterm16": "0" }),
-      \ "light_grey"    : get(s:overrides, "light_grey", { "gui": "#CFCFCF", "cterm": "251", "cterm16": "7" }),
-      \ "visual_black"  : get(s:overrides, "visual_black", { "gui": "NONE", "cterm": "NONE", "cterm16": "0" }),
-      \ "cursor_grey"   : get(s:overrides, "cursor_grey", { "gui": "#22262D", "cterm": "235", "cterm16": "0" }),
-      \ "visual_grey"   : get(s:overrides, "visual_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }),
-      \ "menu_grey"     : get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" }),
-      \ "gutter_fg_grey": get(s:overrides, "gutter_fg_grey", { "gui": "#4B5263", "cterm": "238", "cterm16": "15" }),
-      \ "special_grey"  : get(s:overrides, "special_grey", { "gui": "#36352B", "cterm": "238", "cterm16": "15" }),
-      \ "comment_grey"  : get(s:overrides, "comment_grey", { "gui": "#6C7381", "cterm": "242", "cterm16": "8" }),
+      \ "grey900"       : get(s:overrides, "grey900", { "gui": "#22262D", "cterm": "235", "cterm16": "0" }),
+      \ "grey700"       : get(s:overrides, "grey700", { "gui": "#2C323C", "cterm": "59", "cterm16": "15" }),
+      \ "grey500"       : get(s:overrides, "grey500", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }),
+      \ "grey300"       : get(s:overrides, "grey300", { "gui": "#4B5263", "cterm": "238", "cterm16": "15" }),
+      \ "grey100"       : get(s:overrides, "grey100", { "gui": "#6C7381", "cterm": "242", "cterm16": "8" }),
       \ "white"         : get(s:overrides, "white", { "gui": "#ABB2BF", "cterm": "252", "cterm16": "7" }),
-      \ "vertsplit"     : get(s:overrides, "vertsplit", { "gui": "#2C323C", "cterm": "59", "cterm16": "15" }),
       \}
 
 if g:onedark_style ==# 'darker' || g:onedark_style ==# 'deep'
 
-let s:colors.red            = get(s:overrides, "red", { "gui": "#E06C75", "cterm": "203", "cterm16": "9" })
 let s:colors.dark_red       = get(s:overrides, "dark_red", { "gui": "#BE5046", "cterm": "1", "cterm16": "1" })
-let s:colors.green          = get(s:overrides, "green", { "gui": "#98C379", "cterm": "114", "cterm16": "2" })
-let s:colors.yellow         = get(s:overrides, "yellow", { "gui": "#E5C07B", "cterm": "220", "cterm16": "11" })
+let s:colors.red            = get(s:overrides, "red", { "gui": "#E06C75", "cterm": "203", "cterm16": "9" })
 let s:colors.dark_yellow    = get(s:overrides, "dark_yellow", { "gui": "#D19A66", "cterm": "214", "cterm16": "3" })
-let s:colors.blue           = get(s:overrides, "blue", { "gui": "#569EE8", "cterm": "33", "cterm16": "4" })
-let s:colors.light_blue     = get(s:overrides, "light_blue", { "gui": "#5EB6DF", "cterm": "75", "cterm16": "12" })
-let s:colors.purple         = get(s:overrides, "purple", { "gui": "#C678DD", "cterm": "176", "cterm16": "5" })
+let s:colors.yellow         = get(s:overrides, "yellow", { "gui": "#E5C07B", "cterm": "220", "cterm16": "11" })
+let s:colors.green          = get(s:overrides, "green", { "gui": "#98C379", "cterm": "114", "cterm16": "2" })
 let s:colors.cyan           = get(s:overrides, "cyan", { "gui": "#62D5D5", "cterm": "80", "cterm16": "6" })
+let s:colors.light_blue     = get(s:overrides, "light_blue", { "gui": "#60BAE4", "cterm": "75", "cterm16": "12" })
+let s:colors.blue           = get(s:overrides, "blue", { "gui": "#579DE4", "cterm": "33", "cterm16": "4" })
+let s:colors.purple         = get(s:overrides, "purple", { "gui": "#C678DD", "cterm": "176", "cterm16": "5" })
 let s:colors.black          = get(s:overrides, "black", { "gui": "#18191C", "cterm": "234", "cterm16": "0" })
-let s:colors.visual_grey    = get(s:overrides, "visual_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "15" })
-let s:colors.menu_grey      = get(s:overrides, "menu_grey", { "gui": "#3E4452", "cterm": "237", "cterm16": "8" })
-let s:colors.gutter_fg_grey = get(s:overrides, "gutter_fg_grey", { "gui": "#4B5263", "cterm": "238", "cterm16": "15" })
-let s:colors.special_grey   = get(s:overrides, "special_grey", { "gui": "#36352B", "cterm": "238", "cterm16": "15" })
-let s:colors.comment_grey   = get(s:overrides, "comment_grey", { "gui": "#686F7C", "cterm": "243", "cterm16": "8" })
-let s:colors.light_grey     = get(s:overrides, "light_grey", { "gui": "#abb2bf", "cterm": "250", "cterm16": "7" })
+let s:colors.white          = get(s:overrides, "white", { "gui": "#AFB6C2", "cterm": "252", "cterm16": "7" })
 
 endif
 
@@ -193,22 +185,22 @@ endif
 let g:terminal_ansi_colors = [
   \ s:colors.black.gui, s:colors.red.gui, s:colors.green.gui, s:colors.yellow.gui,
   \ s:colors.blue.gui, s:colors.purple.gui, s:colors.cyan.gui, s:colors.white.gui,
-  \ s:colors.visual_grey.gui, s:colors.dark_red.gui, s:colors.green.gui, s:colors.dark_yellow.gui,
-  \ s:colors.blue.gui, s:colors.purple.gui, s:colors.cyan.gui, s:colors.comment_grey.gui
+  \ s:colors.grey500.gui, s:colors.dark_red.gui, s:colors.green.gui, s:colors.dark_yellow.gui,
+  \ s:colors.blue.gui, s:colors.purple.gui, s:colors.cyan.gui, s:colors.grey100.gui
 \]
 
 " }}}
 
 " Syntax Groups (descriptions and ordering from `:h w18`) {{{
 
-call s:h("Comment", { "fg": s:colors.comment_grey, "gui": "italic", "cterm": "italic" }) " any comment
+call s:h("Comment", { "fg": s:colors.grey100, "gui": "italic", "cterm": "italic" }) " any comment
 call s:h("Constant", { "fg": s:colors.yellow }) " any constant
 call s:h("String", { "fg": s:colors.green }) " a string constant: "this is a string"
 call s:h("Character", { "fg": s:colors.green }) " a character constant: 'c', '\n'
 call s:h("Number", { "fg": s:colors.dark_yellow }) " a number constant: 234, 0xff
 call s:h("Boolean", { "fg": s:colors.dark_yellow }) " a boolean constant: TRUE, false
 call s:h("Float", { "fg": s:colors.dark_yellow }) " a floating point constant: 2.3e10
-call s:h("Identifier", { "fg": s:colors.light_grey }) " any variable name
+call s:h("Identifier", { "fg": s:colors.white }) " any variable name
 call s:h("Function", { "fg": s:colors.blue }) " function name (also: methods for classes)
 call s:h("Statement", { "fg": s:colors.purple }) " any statement
 call s:h("Conditional", { "fg": s:colors.purple }) " if, then, else, endif, switch, etc.
@@ -230,9 +222,9 @@ call s:h("Special", { "fg": s:colors.blue }) " any special symbol
 call s:h("SpecialChar", {}) " special character in a constant
 call s:h("Tag", {}) " you can use CTRL-] on this
 call s:h("Delimiter", {}) " character that needs attention
-call s:h("SpecialComment", { "fg": s:colors.comment_grey }) " special things inside a comment
+call s:h("SpecialComment", { "fg": s:colors.grey100 }) " special things inside a comment
 call s:h("Debug", {}) " debugging statements
-call s:h("Underlined", { "gui": "underline", "cterm": "underline", "sp": s:colors.comment_grey }) " text that stands out, HTML links
+call s:h("Underlined", { "gui": "underline", "cterm": "underline", "sp": s:colors.grey100 }) " text that stands out, HTML links
 call s:h("Ignore", {}) " left blank, hidden
 call s:h("Error", { "fg": s:colors.red }) " any erroneous construct
 call s:h("Todo", { "fg": s:colors.purple }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
@@ -240,16 +232,16 @@ call s:h("Todo", { "fg": s:colors.purple }) " anything that needs extra attentio
 " }}}
 
 " Highlighting Groups (descriptions and ordering from `:h highlight-groups`) {{{
-call s:h("ColorColumn", { "bg": s:colors.cursor_grey }) " used for the columns set with 'colorcolumn'
+call s:h("ColorColumn", { "bg": s:colors.grey900 }) " used for the columns set with 'colorcolumn'
 call s:h("Conceal", {}) " placeholder characters substituted for concealed text (see 'conceallevel')
 call s:h("Cursor", { "fg": s:colors.black, "bg": s:colors.blue }) " the character under the cursor
 call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
-call s:h("CursorColumn", { "bg": s:colors.cursor_grey }) " the screen column that the cursor is in when 'cursorcolumn' is set
+call s:h("CursorColumn", { "bg": s:colors.grey900 }) " the screen column that the cursor is in when 'cursorcolumn' is set
 if &diff
   " Don't change the background color in diff mode
   call s:h("CursorLine", { "gui": "underline" }) " the screen line that the cursor is in when 'cursorline' is set
 else
-  call s:h("CursorLine", { "bg": s:colors.cursor_grey }) " the screen line that the cursor is in when 'cursorline' is set
+  call s:h("CursorLine", { "bg": s:colors.grey900 }) " the screen line that the cursor is in when 'cursorline' is set
 endif
 call s:h("Directory", { "fg": s:colors.blue }) " directory names (and other special names in listings)
 call s:h("DiffAdd", { "bg": s:colors.green, "fg": s:colors.black }) " diff mode: Added line
@@ -261,43 +253,43 @@ if get(g:, 'onedark_hide_endofbuffer', 0)
     call s:h("EndOfBuffer", { "fg": s:colors.black }) " filler lines (~) after the last line in the buffer
 endif
 call s:h("ErrorMsg", { "fg": s:colors.red }) " error messages on the command line
-call s:h("VertSplit", { "fg": s:colors.vertsplit, "bg": s:colors.vertsplit}) " the column separating vertically split windows
-call s:h("WinSeparator", { "fg": s:colors.comment_grey }) " the column separating vertically split windows
-call s:h("Folded", { "fg": s:colors.comment_grey }) " line used for closed folds
+call s:h("grey700", { "fg": s:colors.grey700, "bg": s:colors.grey700}) " the column separating vertically split windows
+call s:h("WinSeparator", { "fg": s:colors.grey700, "bg": s:colors.grey700 }) " the column separating vertically split windows
+call s:h("Folded", { "fg": s:colors.grey100 }) " line used for closed folds
 call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
-call s:h("IncSearch", { "fg": s:colors.yellow, "bg": s:colors.comment_grey }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
-call s:h("LineNr", { "fg": s:colors.comment_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-call s:h("CursorLineNr", { "bg": s:colors.cursor_grey }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-call s:h("CursorLineSign", { "bg": s:colors.cursor_grey }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-call s:h("MatchParen", { "gui": "underline", "sp": s:colors.comment_grey }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
+call s:h("IncSearch", { "fg": s:colors.yellow, "bg": s:colors.grey100 }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
+call s:h("LineNr", { "fg": s:colors.grey100 }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+call s:h("CursorLineNr", { "bg": s:colors.grey900 }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+call s:h("CursorLineSign", { "bg": s:colors.grey900 }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+call s:h("MatchParen", { "gui": "underline", "sp": s:colors.grey100 }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
-call s:h("NonText", { "fg": s:colors.comment_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
+call s:h("NonText", { "fg": s:colors.grey100 }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
 call s:h("Normal", { "fg": s:colors.white }) " normal text
-call s:h("Pmenu", { "bg": s:colors.menu_grey }) " Popup menu: normal item.
+call s:h("Pmenu", { "bg": s:colors.grey500 }) " Popup menu: normal item.
 call s:h("PmenuSel", { "fg": s:colors.black, "bg": s:colors.blue }) " Popup menu: selected item.
-call s:h("PmenuSbar", { "bg": s:colors.special_grey }) " Popup menu: scrollbar.
+call s:h("PmenuSbar", { "bg": s:colors.yellowish_grey }) " Popup menu: scrollbar.
 call s:h("PmenuThumb", { "bg": s:colors.white }) " Popup menu: Thumb of the scrollbar.
 call s:h("Question", { "fg": s:colors.purple }) " hit-enter prompt and yes/no questions
 call s:h("QuickFixLine", { "fg": s:colors.black, "bg": s:colors.yellow }) " Current quickfix item in the quickfix window.
 call s:h("Search", { "fg": s:colors.black, "bg": s:colors.yellow }) " Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
-call s:h("SpecialKey", { "fg": s:colors.comment_grey }) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
+call s:h("SpecialKey", { "fg": s:colors.grey100 }) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
 call s:h("SpellBad", { "fg": s:colors.red, "gui": "underline", "cterm": "underline" }) " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
 call s:h("SpellCap", { "fg": s:colors.dark_yellow }) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call s:h("SpellLocal", { "fg": s:colors.dark_yellow }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", { "fg": s:colors.dark_yellow }) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
-call s:h("StatusLine", { "fg": s:colors.white, "bg": s:colors.vertsplit }) " status line of current window
-call s:h("StatusLineNC", { "fg": s:colors.comment_grey, "bg": s:colors.vertsplit }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-call s:h("StatusLineTerm", { "fg": s:colors.white, "bg": s:colors.vertsplit }) " status line of current :terminal window
-call s:h("StatusLineTermNC", { "fg": s:colors.comment_grey, "bg": s:colors.visual_grey }) " status line of non-current :terminal window
-call s:h("TabLine", { "fg": s:colors.comment_grey, "bg": s:colors.visual_grey }) " tab pages line, not active tab page label
-call s:h("TabLineFill", { "bg": s:colors.visual_grey}) " tab pages line, where there are no labels
+call s:h("StatusLine", { "fg": s:colors.white, "bg": s:colors.grey700 }) " status line of current window
+call s:h("StatusLineNC", { "fg": s:colors.grey100, "bg": s:colors.grey700 }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+call s:h("StatusLineTerm", { "fg": s:colors.white, "bg": s:colors.grey700 }) " status line of current :terminal window
+call s:h("StatusLineTermNC", { "fg": s:colors.grey100, "bg": s:colors.grey500 }) " status line of non-current :terminal window
+call s:h("TabLine", { "fg": s:colors.grey100, "bg": s:colors.grey500 }) " tab pages line, not active tab page label
+call s:h("TabLineFill", { "bg": s:colors.grey500}) " tab pages line, where there are no labels
 call s:h("TabLineSel", { "fg": s:colors.white }) " tab pages line, active tab page label
 call s:h("Terminal", { "fg": s:colors.white, "bg": s:colors.black }) " terminal window (see terminal-size-color)
 call s:h("Title", { "fg": s:colors.green }) " titles for output from ":set all", ":autocmd" etc.
-call s:h("Visual", { "fg": s:colors.visual_black, "bg": s:colors.visual_grey }) " Visual mode selection
-call s:h("VisualNOS", { "bg": s:colors.visual_grey }) " Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
+call s:h("Visual", { "bg": s:colors.grey500 }) " Visual mode selection
+call s:h("VisualNOS", { "bg": s:colors.grey500 }) " Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
 call s:h("WarningMsg", { "fg": s:colors.yellow }) " warning messages
 call s:h("WildMenu", { "fg": s:colors.black, "bg": s:colors.blue }) " current match in 'wildmenu' completion
 
@@ -306,7 +298,7 @@ call s:h("WildMenu", { "fg": s:colors.black, "bg": s:colors.blue }) " current ma
 " Termdebug highlighting for Vim 8.1+ {{{
 
 " See `:h hl-debugPC` and `:h hl-debugBreakpoint`.
-call s:h("debugPC", { "bg": s:colors.special_grey }) " the current position
+call s:h("debugPC", { "bg": s:colors.yellowish_grey }) " the current position
 call s:h("debugBreakpoint", { "fg": s:colors.black, "bg": s:colors.red }) " a breakpoint
 
 " }}}
@@ -451,7 +443,7 @@ call s:h("javascriptClassName", { "fg": s:colors.blue })
 call s:h("javascriptPropertyNameString", { "fg": s:colors.green })
 call s:h("javascriptLabel", {"fg": s:colors.red })
 call s:h("javascriptObjectMethodName", {"fg": s:colors.blue })
-call s:h("javascriptLineComment", {"fg": s:colors.comment_grey })
+call s:h("javascriptLineComment", {"fg": s:colors.grey100 })
 
 " JSON
 call s:h("jsonCommentError", { "fg": s:colors.white })
@@ -476,8 +468,8 @@ call s:h("markdownCode", { "fg": s:colors.green })
 call s:h("markdownCodeBlock", { "fg": s:colors.green })
 call s:h("markdownCodeDelimiter", { "fg": s:colors.green })
 call s:h("markdownHeadingDelimiter", { "fg": s:colors.red })
-call s:h("markdownRule", { "fg": s:colors.comment_grey })
-call s:h("markdownHeadingRule", { "fg": s:colors.comment_grey })
+call s:h("markdownRule", { "fg": s:colors.grey100 })
+call s:h("markdownHeadingRule", { "fg": s:colors.grey100 })
 call s:h("markdownH1", { "fg": s:colors.red })
 call s:h("markdownH2", { "fg": s:colors.red })
 call s:h("markdownH3", { "fg": s:colors.red })
@@ -486,7 +478,7 @@ call s:h("markdownH5", { "fg": s:colors.red })
 call s:h("markdownH6", { "fg": s:colors.red })
 call s:h("markdownIdDelimiter", { "fg": s:colors.purple })
 call s:h("markdownId", { "fg": s:colors.purple })
-call s:h("markdownBlockquote", { "fg": s:colors.comment_grey })
+call s:h("markdownBlockquote", { "fg": s:colors.grey100 })
 call s:h("markdownItalic", { "fg": s:colors.purple, "gui": "italic", "cterm": "italic" })
 call s:h("markdownBold", { "fg": s:colors.dark_yellow, "gui": "bold", "cterm": "bold" })
 call s:h("markdownListMarker", { "fg": s:colors.red })
@@ -501,8 +493,8 @@ call s:h("perlFiledescRead", { "fg": s:colors.green })
 call s:h("perlFunction", { "fg": s:colors.purple })
 call s:h("perlMatchStartEnd",{ "fg": s:colors.blue })
 call s:h("perlMethod", { "fg": s:colors.purple })
-call s:h("perlPOD", { "fg": s:colors.comment_grey })
-call s:h("perlSharpBang", { "fg": s:colors.comment_grey })
+call s:h("perlPOD", { "fg": s:colors.grey100 })
+call s:h("perlSharpBang", { "fg": s:colors.grey100 })
 call s:h("perlSpecialString",{ "fg": s:colors.cyan })
 call s:h("perlStatementFiledesc", { "fg": s:colors.red })
 call s:h("perlStatementFlow",{ "fg": s:colors.red })
@@ -632,13 +624,13 @@ hi link GitGutterChangeLineNr GitGutterChange
 hi link GitGutterDeleteLineNr GitGutterDelete
 hi link GitGutterChangeDeleteLineNr GitGutterChange
 
-call s:h("SignatureMarkText", { "fg": s:colors.light_grey })
+call s:h("SignatureMarkText", { "fg": s:colors.white })
 
 " easymotion/vim-easymotion
 call s:h("EasyMotionTarget", { "fg": s:colors.red, "gui": "bold", "cterm": "bold" })
 call s:h("EasyMotionTarget2First", { "fg": s:colors.yellow, "gui": "bold", "cterm": "bold" })
 call s:h("EasyMotionTarget2Second", { "fg": s:colors.dark_yellow, "gui": "bold", "cterm": "bold" })
-call s:h("EasyMotionShade",  { "fg": s:colors.comment_grey })
+call s:h("EasyMotionShade",  { "fg": s:colors.grey100 })
 
 " mhinz/vim-signify
 call s:h("SignifySignAdd", { "fg": s:colors.green })
@@ -658,7 +650,7 @@ call s:h("diffRemoved", { "fg": s:colors.red })
 
 " Git Highlighting {{{
 
-call s:h("gitcommitComment", { "fg": s:colors.comment_grey })
+call s:h("gitcommitComment", { "fg": s:colors.grey100 })
 call s:h("gitcommitUnmerged", { "fg": s:colors.green })
 call s:h("gitcommitOnBranch", {})
 call s:h("gitcommitBranch", { "fg": s:colors.purple })
@@ -733,10 +725,10 @@ call s:h("@constant", {"fg": s:colors.yellow})
 call s:h("@const.builtin", {"fg": s:colors.yellow})
 call s:h("@constant.builtin", {"fg": s:colors.yellow})
 call s:h("@constructor", {"fg": s:colors.cyan})
-call s:h("@variable", {"fg": s:colors.light_grey})
+call s:h("@variable", {"fg": s:colors.white})
 call s:h("@variable.builtin", {"fg": s:colors.yellow})
 call s:h("@variable.member.python", {"fg": s:colors.red})
-call s:h("@punctuation.bracket", {"fg": s:colors.light_grey})
+call s:h("@punctuation.bracket", {"fg": s:colors.white})
 call s:h("@punctuation.special", {"fg": s:colors.dark_red})
 call s:h("@punctuation.delimiter", {"fg": s:colors.white})
 call s:h("@property", {"fg": s:colors.white})
@@ -760,9 +752,9 @@ call s:h("TSParameter", {"fg": s:colors.white})
 call s:h("TSConstant", {"fg": s:colors.yellow})
 call s:h("TSConstructor", {"fg": s:colors.cyan})
 call s:h("TSConstBuiltin", {"fg": s:colors.yellow})
-call s:h("TSVariable", {"fg": s:colors.light_grey})
+call s:h("TSVariable", {"fg": s:colors.white})
 call s:h("TSVariableBuiltin", {"fg": s:colors.yellow})
-call s:h("TSPunctBracket", {"fg": s:colors.light_grey})
+call s:h("TSPunctBracket", {"fg": s:colors.white})
 call s:h("TSPunctSpecial", {"fg": s:colors.dark_red})
 call s:h("TSPunctDelimiter", {"fg": s:colors.white})
 call s:h("TSProperty", {"fg": s:colors.white})
@@ -795,10 +787,10 @@ endif
 
 " Vim Illuminate Group {{{
 
-call s:h("illuminatedWord", {"bg": s:colors.special_grey})
-call s:h("IlluminatedWordText", {"bg": s:colors.special_grey})
-call s:h("IlluminatedWordRead", {"bg": s:colors.special_grey})
-call s:h("IlluminatedWordWrite", {"bg": s:colors.special_grey})
+call s:h("illuminatedWord", {"bg": s:colors.yellowish_grey})
+call s:h("IlluminatedWordText", {"bg": s:colors.yellowish_grey})
+call s:h("IlluminatedWordRead", {"bg": s:colors.yellowish_grey})
+call s:h("IlluminatedWordWrite", {"bg": s:colors.yellowish_grey})
 
 " }}}
 
@@ -813,14 +805,14 @@ if has("nvim")
   let g:terminal_color_5 =  s:colors.purple.gui
   let g:terminal_color_6 =  s:colors.cyan.gui
   let g:terminal_color_7 =  s:colors.white.gui
-  let g:terminal_color_8 =  s:colors.visual_grey.gui
+  let g:terminal_color_8 =  s:colors.grey500.gui
   let g:terminal_color_9 =  s:colors.dark_red.gui
   let g:terminal_color_10 = s:colors.green.gui " No dark version
   let g:terminal_color_11 = s:colors.dark_yellow.gui
   let g:terminal_color_12 = s:colors.blue.gui " No dark version
   let g:terminal_color_13 = s:colors.purple.gui " No dark version
   let g:terminal_color_14 = s:colors.cyan.gui " No dark version
-  let g:terminal_color_15 = s:colors.comment_grey.gui
+  let g:terminal_color_15 = s:colors.grey100.gui
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_7
 endif
