@@ -260,7 +260,7 @@ call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", { "fg": s:colors.yellow, "bg": s:colors.grey100 }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
 call s:h("LineNr", { "fg": s:colors.grey100 }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-call s:h("CursorLineNr", { "bg": s:colors.grey900 }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+call s:h("CursorLineNr", { "fg": s:colors.dark_yellow, "bg": s:colors.grey900, "gui": "bold" }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 call s:h("CursorLineSign", { "bg": s:colors.grey900 }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 call s:h("MatchParen", { "fg": s:colors.dark_yellow, "gui": "bold", "cterm": "bold" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
@@ -275,7 +275,7 @@ call s:h("Question", { "fg": s:colors.purple }) " hit-enter prompt and yes/no qu
 call s:h("QuickFixLine", { "fg": s:colors.black, "bg": s:colors.yellow }) " Current quickfix item in the quickfix window.
 call s:h("Search", { "fg": s:colors.black, "bg": s:colors.yellow }) " Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
 call s:h("SpecialKey", { "fg": s:colors.grey100 }) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
-call s:h("SpellBad", { "fg": s:colors.red, "gui": "underline", "cterm": "underline" }) " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
+call s:h("SpellBad", { "gui": "undercurl", "cterm": "undercurl" }) " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
 call s:h("SpellCap", { "fg": s:colors.dark_yellow }) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call s:h("SpellLocal", { "fg": s:colors.dark_yellow }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", { "fg": s:colors.dark_yellow }) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
@@ -292,6 +292,7 @@ call s:h("Visual", { "bg": s:colors.grey500 }) " Visual mode selection
 call s:h("VisualNOS", { "bg": s:colors.grey500 }) " Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
 call s:h("WarningMsg", { "fg": s:colors.yellow }) " warning messages
 call s:h("WildMenu", { "fg": s:colors.black, "bg": s:colors.blue }) " current match in 'wildmenu' completion
+call s:h("FloatBorder", { "fg": s:colors.cyan }) " float window border
 
 " }}}
 
@@ -778,8 +779,8 @@ call s:h("@lsp.type.property", {"fg": s:colors.red})
 call s:h("@lsp.type.type", {"fg": s:colors.yellow})
 call s:h("@lsp.type.macro", {"fg": s:colors.light_blue})
 
-call s:h("DiagnosticUnderlineWarn", {"sp": s:colors.yellow, "gui": "underline", "cterm": "underline"})
-call s:h("DiagnosticUnderlineError", {"sp": s:colors.red, "gui": "underline", "cterm": "underline"})
+call s:h("DiagnosticUnderlineWarn", {"gui": "undercurl", "cterm": "undercurl"})
+call s:h("DiagnosticUnderlineError", {"gui": "undercurl", "cterm": "undercurl"})
 
 endif
 
@@ -825,6 +826,12 @@ call s:h("DiagnosticWarn", {"fg": s:colors.yellow})
 call s:h("DiagnosticInfo", {"fg": s:colors.light_blue})
 call s:h("DiagnosticOk", {"fg": s:colors.green})
 
+
+" }}}
+
+" Telescope colors {{{
+
+call s:h("TelescopeBorder", {"fg": s:colors.cyan})
 
 " }}}
 
