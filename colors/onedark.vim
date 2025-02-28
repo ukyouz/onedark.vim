@@ -788,10 +788,10 @@ endif
 
 " Vim Illuminate Group {{{
 
-call s:h("illuminatedWord", {"bg": s:colors.yellowish_grey})
-call s:h("IlluminatedWordText", {"bg": s:colors.yellowish_grey})
-call s:h("IlluminatedWordRead", {"bg": s:colors.yellowish_grey})
-call s:h("IlluminatedWordWrite", {"bg": s:colors.yellowish_grey})
+" call s:h("illuminatedWord", {"bg": s:colors.yellowish_grey})
+" call s:h("IlluminatedWordText", {"bg": s:colors.yellowish_grey})
+" call s:h("IlluminatedWordRead", {"bg": s:colors.yellowish_grey})
+" call s:h("IlluminatedWordWrite", {"bg": s:colors.yellowish_grey})
 
 " }}}
 
